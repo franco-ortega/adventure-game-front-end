@@ -11,6 +11,7 @@ export default function App() {
     <>
       <h1>Save the Farm!</h1>
       <Router>
+        <hr/>
         <h3>Inside the Router</h3>
         <Switch>
           <Route
