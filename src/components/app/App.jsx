@@ -5,10 +5,11 @@ import {
   Switch
 } from 'react-router-dom';
 import Home from '../home/Home';
+import styles from './App.css';
 
 export default function App() {
   return (
-    <>
+    <div className={styles.App}>
       <h1>Save the Farm!</h1>
       <Router>
         <hr/>
@@ -20,6 +21,6 @@ export default function App() {
           />
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
