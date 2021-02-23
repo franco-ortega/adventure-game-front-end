@@ -5,7 +5,9 @@ import styles from './Home.css';
 export default function Home() {
   return (
     <div className={styles.Home}>
-      You have found the Home Page.
+      <header>
+        <h2>Welcome to Thillop</h2>
+      </header>
       <main>
         <p>
             Thillop is a quiet town on the outskirts of Dalria. Unfortunately, a plague of bollywurgs devoured most of the crops this summer. Farmers still had enough food to feed their families but barely had any leftover to sell at the markets. However, the moneylenders accept no excuse for failed payments on farm loans. They have threatened to take the farms of those who do not pay. Still, not all is lost. Not yet. There are rumors of valuable gems to be found in the fairy lands beyond the valley. However, the rumors also tell of dangers that lurk in such places. But a little danger has never stopped you, right?
@@ -26,9 +28,7 @@ export default function Home() {
             Are you ready?!
         </p>
       </main>
-      <section>
-        <button>Proceed</button>
-      </section>
+      <button>Proceed</button>
     </div>
   );
 }
