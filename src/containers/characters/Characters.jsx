@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CharacterForm from '../../components/characters/CharacterForm';
 import CharacterList from '../../components/characters/CharacterList';
 import styles from './Characters.css';
@@ -14,7 +15,9 @@ export default function Characters() {
       <CharacterForm />
       <CharacterList />
       <p>
-        <button>Begin Adventure!</button>
+        <Link to={'quests'}>
+          <button>Begin Adventure!</button>
+        </Link>
       </p>
     </div>
   );

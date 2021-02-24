@@ -6,7 +6,11 @@ import {
 } from 'react-router-dom';
 import Home from '../home/Home';
 import Characters from '../../containers/characters/Characters';
+import Quest from '../../containers/quests/Quest';
 import styles from './App.css';
+import QuestForest from '../quests/QuestForest';
+import QuestSwamp from '../quests/QuestSwamp';
+import QuestVolcano from '../quests/QuestVolcano';
 
 export default function App() {
   return (
@@ -23,6 +27,22 @@ export default function App() {
           <Route
             exact path="/characters"
             component={Characters}
+          />
+          <Route
+            exact path="/quests"
+            component={Quest}
+          />
+          <Route
+            exact path="/quests/forest"
+            component={QuestForest}
+          />
+          <Route
+            exact path="/quests/swamp"
+            component={QuestSwamp}
+          />
+          <Route
+            exact path="/quests/volcano"
+            component={QuestVolcano}
           />
         </Switch>
       </Router>

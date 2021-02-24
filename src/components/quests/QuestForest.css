@@ -1,0 +1,8 @@
+.QuestForest {
+    background-color: green;
+    background-image: url('../../../public/assets/forest.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 100%;
+}

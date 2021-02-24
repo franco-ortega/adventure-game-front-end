@@ -1,0 +1,22 @@
+.Quest {
+    background-color: gray;
+    background-image: url('../../../public/assets/map.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    margin: auto;
+    padding: 25px;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.75rem;
+    font-weight: bold;
+
+    a {
+        color: purple;
+    }
+}
