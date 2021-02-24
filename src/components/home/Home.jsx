@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Home.css';
 
 export default function Home() {
@@ -28,7 +29,9 @@ export default function Home() {
             Are you ready?!
         </p>
       </main>
-      <button>Proceed</button>
+      <Link to={'characters'}>
+        <button>Proceed</button>
+      </Link>
     </div>
   );
 }

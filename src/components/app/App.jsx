@@ -5,6 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Home from '../home/Home';
+import Characters from '../../containers/characters/Characters';
 import styles from './App.css';
 
 export default function App() {
@@ -18,6 +19,10 @@ export default function App() {
           <Route
             exact path="/"
             component={Home}
+          />
+          <Route
+            exact path="/characters"
+            component={Characters}
           />
         </Switch>
       </Router>
