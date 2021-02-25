@@ -5,6 +5,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [session, setSession] = useState(null);
+  const isAuthenticated = !!session;
 
   const signup = (username, email, password) => {
 
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ session, signup }}>
+    <AuthContext.Provider value={{ session, signup, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );
@@ -23,6 +24,11 @@ export const AuthProvider = ({ children }) => {
 export const useSession = () => {
   const { session } = useContext(AuthContext);
   return session;
+};
+
+export const useIsAuthenticated = () => {
+  const { isAuthenticated } = useContext(AuthContext);
+  return isAuthenticated;
 };
 
 export const useSignup = () => {
