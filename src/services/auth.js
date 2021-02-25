@@ -11,3 +11,15 @@ export const postSignup = (username, email, password) => {
   })
     .then(res => res.json());
 };
+
+export const postLogin = (username, password) => {
+  return fetch(`${API_URL}/api/v1/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    credentials: 'include',
+    body: JSON.stringify({ username, password })
+  })
+    .then(res => res.json());
+};
