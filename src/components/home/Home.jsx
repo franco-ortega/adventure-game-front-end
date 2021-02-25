@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../auth/Login';
 import Signup from '../auth/Signup';
 import styles from './Home.css';
 
@@ -30,10 +31,16 @@ export default function Home() {
             Are you ready?!
         </p>
       </main>
+      <p>
+        Log in or sign up to proceed.
+      </p>
       <Link to={'characters'}>
         <button>Proceed</button>
       </Link>
-      <Signup />
+      <div>
+        <Login />
+        <Signup />
+      </div>
     </div>
   );
 }

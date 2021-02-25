@@ -29,6 +29,10 @@
         padding: 5px;
     }
 
+    div {
+        display: flex;
+    }
+
     button {
         border-radius: 10px;
         margin: 10px;
