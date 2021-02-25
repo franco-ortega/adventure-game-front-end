@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Signup from '../auth/Signup';
 import styles from './Home.css';
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       <Link to={'characters'}>
         <button>Proceed</button>
       </Link>
+      <Signup />
     </div>
   );
 }
