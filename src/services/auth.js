@@ -1,25 +1,9 @@
-const API_URL = process.env.API_URL;
+import { post } from './request';
 
 export const postSignup = (username, email, password) => {
-  return fetch(`${API_URL}/api/v1/auth/signup`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ username, email, password })
-  })
-    .then(res => res.json());
+  return post('/api/v1/auth/signup', { username, email, password });
 };
 
 export const postLogin = (username, password) => {
-  return fetch(`${API_URL}/api/v1/auth/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ username, password })
-  })
-    .then(res => res.json());
+  return post('/api/v1/auth/login', { username, password });
 };
