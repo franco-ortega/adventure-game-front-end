@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { postLogin, postSignup } from '../services/auth';
+import { getVerify, postLogin, postSignup } from '../services/auth';
 
 const AuthContext = createContext(null);
 
@@ -9,7 +9,9 @@ export const AuthProvider = ({ children }) => {
   const isAuthenticated = !!session;
 
   useEffect(() => {
-
+    getVerify()
+      .then(user => setSession(user))
+      .catch(() => console.log('User not logged in.'));
   }, []);
 
   const signup = (username, email, password) => {
