@@ -8,10 +8,6 @@ exports[`App component renders App 1`] = `
     <h1>
       Save the Farm!
     </h1>
-    <hr />
-    <h3>
-      Inside the Router
-    </h3>
     <div
       class="Home"
     >
