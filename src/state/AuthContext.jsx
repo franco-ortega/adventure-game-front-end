@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { postLogin, postSignup } from '../services/auth';
 
 const AuthContext = createContext(null);
@@ -7,6 +7,10 @@ export const AuthProvider = ({ children }) => {
   const [session, setSession] = useState(null);
   const [error, setError] = useState('');
   const isAuthenticated = !!session;
+
+  useEffect(() => {
+
+  }, []);
 
   const signup = (username, email, password) => {
     postSignup(username, email, password)
