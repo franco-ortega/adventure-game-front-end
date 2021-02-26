@@ -5,7 +5,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [session, setSession] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   const isAuthenticated = !!session;
 
   const signup = (username, email, password) => {
@@ -40,6 +40,13 @@ export const useSession = () => {
 
 export const useError = () => {
   const { error } = useContext(AuthContext);
+
+  // eslint-disable-next-line max-len
+  const sameUsername = 'duplicate key value violates unique constraint "users_username_key"';
+
+  if(error.message === sameUsername) {
+    error.message = 'This username already exists. Please select another.';
+  }
   return error;
 };
 
@@ -57,4 +64,3 @@ export const useLogin = () => {
   const { login } = useContext(AuthContext);
   return login;
 };
-

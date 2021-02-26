@@ -39,10 +39,6 @@ export default function AuthForm({ title, authFn }) {
       <button>{title}</button>
     </form>
   );
-  
-
-
-
 }
 
 AuthForm.propTypes = {

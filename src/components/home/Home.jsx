@@ -1,11 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useError } from '../../state/AuthContext';
 import Login from '../auth/Login';
 import Signup from '../auth/Signup';
 import styles from './Home.css';
 
 export default function Home() {
+  const error = useError();
+
   return (
     <div className={styles.Home}>
       <header>
@@ -34,9 +37,12 @@ export default function Home() {
       <p>
         Log in or sign up to proceed.
       </p>
-      <Link to={'characters'}>
+      {/* <Link to={'characters'}>
         <button>Proceed</button>
-      </Link>
+      </Link> */}
+      <section>
+        {error && <p>{error.message}</p>}
+      </section>
       <div>
         <Login />
         <Signup />
