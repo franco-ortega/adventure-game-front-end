@@ -43,30 +43,6 @@ export default function CharacterForm() {
           </form>
         </section>
       </main>
-
-      {/* <form action="">
-        <label htmlFor="">
-          Character Name:
-          <input type="text"/>
-        </label>
-        <label htmlFor="">
-          Species:
-          <select type="text">
-            <option value="dwarf">Dwarf</option>
-            <option value="elf">Elf</option>
-            <option value="gnome">Gnome</option>
-            <option value="halfling">Halfling</option>
-            <option value="human">Human</option>
-            <option value="orc">Orc</option>
-          </select>
-        </label>
-        <label htmlFor="">
-          Gender (optional):
-          <input type="text"/>
-        </label>
-        <button>Create Character</button>
-      </form> */}
-
     </div>
   );
 }

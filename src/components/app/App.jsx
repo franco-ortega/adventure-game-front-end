@@ -11,8 +11,8 @@ import styles from './App.css';
 import QuestForest from '../quests/QuestForest';
 import QuestSwamp from '../quests/QuestSwamp';
 import QuestVolcano from '../quests/QuestVolcano';
-import { AuthProvider } from '../../state/AuthContext';
 import PrivateRoute from '../auth/PrivateRoute';
+import { AuthProvider } from '../../state/AuthContext';
 
 export default function App() {
   return (
@@ -20,8 +20,6 @@ export default function App() {
       <h1>Save the Farm!</h1>
       <Router>
         <AuthProvider>
-          <hr/>
-          <h3>Inside the Router</h3>
           <Switch>
             <Route
               exact path="/"

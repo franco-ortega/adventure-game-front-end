@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useError } from '../../state/AuthContext';
 import Login from '../auth/Login';
 import Signup from '../auth/Signup';
@@ -37,9 +36,6 @@ export default function Home() {
       <p>
         Log in or sign up to proceed.
       </p>
-      {/* <Link to={'characters'}>
-        <button>Proceed</button>
-      </Link> */}
       <section>
         {error && <p>{error.message}</p>}
       </section>
