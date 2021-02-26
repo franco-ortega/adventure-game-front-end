@@ -5,13 +5,15 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [session, setSession] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [error, setError] = useState('');
   const isAuthenticated = !!session;
 
   useEffect(() => {
     getVerify()
       .then(user => setSession(user))
-      .catch(() => console.log('User not logged in.'));
+      .catch(() => console.log('User not logged in.'))
+      .finally(() => setAuthLoading(false));
   }, []);
 
   const signup = (username, email, password) => {
@@ -29,6 +31,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={{
       session,
+      authLoading,
       error,
       isAuthenticated,
       signup,
@@ -42,6 +45,11 @@ export const AuthProvider = ({ children }) => {
 export const useSession = () => {
   const { session } = useContext(AuthContext);
   return session;
+};
+
+export const useAuthLoading = () => {
+  const { authLoading } = useContext(AuthContext);
+  return authLoading;
 };
 
 export const useError = () => {
