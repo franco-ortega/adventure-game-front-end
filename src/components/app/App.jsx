@@ -12,6 +12,7 @@ import QuestForest from '../quests/QuestForest';
 import QuestSwamp from '../quests/QuestSwamp';
 import QuestVolcano from '../quests/QuestVolcano';
 import { AuthProvider } from '../../state/AuthContext';
+import PrivateRoute from '../auth/PrivateRoute';
 
 export default function App() {
   return (
@@ -26,23 +27,23 @@ export default function App() {
               exact path="/"
               component={Home}
             />
-            <Route
+            <PrivateRoute
               exact path="/characters"
               component={Characters}
             />
-            <Route
+            <PrivateRoute
               exact path="/quests"
               component={Quest}
             />
-            <Route
+            <PrivateRoute
               exact path="/quests/forest"
               component={QuestForest}
             />
-            <Route
+            <PrivateRoute
               exact path="/quests/swamp"
               component={QuestSwamp}
             />
-            <Route
+            <PrivateRoute
               exact path="/quests/volcano"
               component={QuestVolcano}
             />
