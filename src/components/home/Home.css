@@ -34,8 +34,8 @@
     }
 
     section {
-        color: lightblue;
         min-height: 4vh;
+        color: red;
     }
 
     button {
