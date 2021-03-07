@@ -71,7 +71,9 @@ export default function Characters() {
         onToolChange={onToolChange}
         onCharacterSubmit={onCharacterSubmit}
       />
-      <CharacterList />
+      <CharacterList
+        characters={characters}
+      />
       <p>
         <Link to={'quests'}>
           <button>Begin Adventure!</button>
