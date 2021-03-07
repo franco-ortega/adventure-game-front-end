@@ -15,15 +15,28 @@ export default function CharacterForm() {
           <div>Tool:</div>
         </section>
         <section>
-          <form action="">
-            <label htmlFor="">
-              <input type="text"/>
+          <form>
+            <label htmlFor="character-name-input">
+              <input
+                id="character-name-input"
+                type="text"
+                placeholder="Character Name"
+              />
             </label>
-            <label htmlFor="">
-              <input type="text"/>
+            <label htmlFor="gender-input">
+              <input
+                id="gender-input"
+                type="text"
+                placeholder="Gender"
+              />
             </label>
-            <label htmlFor="">
-              <select type="text">
+            <label htmlFor="species-select">
+              <select
+                name="species"
+                id="species-select"
+                type="text"
+              >
+                <option value="">--Select Species--</option>
                 <option value="dwarf">Dwarf</option>
                 <option value="elf">Elf</option>
                 <option value="gnome">Gnome</option>
@@ -32,8 +45,12 @@ export default function CharacterForm() {
                 <option value="orc">Orc</option>
               </select>
             </label>
-            <label htmlFor="">
-              <select type="text">
+            <label htmlFor="tool-select">
+              <select
+                name="tool"
+                id="tool-select"
+                type="text">
+                <option value="">--Select Tool--</option>
                 <option value="compass">Compass</option>
                 <option value="shield">Shield</option>
                 <option value="torch">Torch</option>
