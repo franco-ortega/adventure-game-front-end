@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './CharacterForm.css';
 
-export default function CharacterForm() {
+export default function CharacterForm({
+  onCharacterNameChange,
+  onGenderChange,
+  onSpeciesChange,
+  onToolChange,
+  onCharacterSubmit
+}) {
   return (
     <div className={styles.CharacterForm}>
       <p>
@@ -15,12 +22,13 @@ export default function CharacterForm() {
           <div>Tool:</div>
         </section>
         <section>
-          <form>
+          <form onSubmit={onCharacterSubmit}>
             <label htmlFor="character-name-input">
               <input
                 id="character-name-input"
                 type="text"
                 placeholder="Character Name"
+                onChange={onCharacterNameChange}
               />
             </label>
             <label htmlFor="gender-input">
@@ -28,6 +36,7 @@ export default function CharacterForm() {
                 id="gender-input"
                 type="text"
                 placeholder="Gender"
+                onChange={onGenderChange}
               />
             </label>
             <label htmlFor="species-select">
@@ -35,6 +44,7 @@ export default function CharacterForm() {
                 name="species"
                 id="species-select"
                 type="text"
+                onChange={onSpeciesChange}
               >
                 <option value="">--Select Species--</option>
                 <option value="dwarf">Dwarf</option>
@@ -49,7 +59,9 @@ export default function CharacterForm() {
               <select
                 name="tool"
                 id="tool-select"
-                type="text">
+                type="text"
+                onChange={onToolChange}
+              >
                 <option value="">--Select Tool--</option>
                 <option value="compass">Compass</option>
                 <option value="shield">Shield</option>
@@ -62,4 +74,13 @@ export default function CharacterForm() {
       </main>
     </div>
   );
+}
+
+CharacterForm.propTypes = {
+  onCharacterNameChange: PropTypes.func.isRequired,
+  onGenderChange: PropTypes.func.isRequired,
+  onSpeciesChange: PropTypes.func.isRequired,
+  onToolChange: PropTypes.func.isRequired,
+  onCharacterSubmit: PropTypes.func.isRequired
+  
 }

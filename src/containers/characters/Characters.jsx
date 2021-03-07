@@ -11,6 +11,38 @@ export default function Characters() {
   const [hitPoints, setHitPoints] = useState(0);
   const [tool, setTool] = useState('');
 
+  const onCharacterNameChange = ({ target }) => {
+    setCharacterName(target.value);
+  };
+  
+  const onGenderChange = ({ target }) => {
+    setGender(target.value);
+  };
+  
+  const onSpeciesChange = ({ target }) => {
+    setSpecies(target.value);
+  };
+
+  const onToolChange = ({ target }) => {
+    setTool(target.value);
+  };
+
+  const onCharacterSubmit = (e) => {
+    console.log('Form submitted');
+    e.preventDefault();
+
+    const character = {
+      characterName,
+      gender,
+      species,
+      hitPoints: 30,
+      tool
+    };
+
+    console.log(character);
+  };
+
+
   return (
     <div className={styles.Characters}>
       <p>
@@ -18,7 +50,13 @@ export default function Characters() {
         <br/>
         Create a new character or select a previous character.
       </p>
-      <CharacterForm />
+      <CharacterForm
+        onCharacterNameChange={onCharacterNameChange}
+        onGenderChange={onGenderChange}
+        onSpeciesChange={onSpeciesChange}
+        onToolChange={onToolChange}
+        onCharacterSubmit={onCharacterSubmit}
+      />
       <CharacterList />
       <p>
         <Link to={'quests'}>
