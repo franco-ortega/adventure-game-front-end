@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CharacterForm from '../../components/characters/CharacterForm';
 import CharacterList from '../../components/characters/CharacterList';
+import { postCharacter } from '../../services/character';
 import styles from './Characters.css';
 
 export default function Characters() {
@@ -33,13 +34,14 @@ export default function Characters() {
 
     const character = {
       characterName,
-      gender,
       species,
       hitPoints: 30,
-      tool
+      gender
     };
 
     console.log(character);
+
+    postCharacter(character);
   };
 
 
