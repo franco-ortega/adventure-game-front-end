@@ -1,19 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CharacterForm from '../../components/characters/CharacterForm';
 import CharacterList from '../../components/characters/CharacterList';
 import { getCharacters, postCharacter } from '../../services/character';
+import { useSession } from '../../state/AuthContext';
 import styles from './Characters.css';
 
 export default function Characters() {
+  // State
   const [characterName, setCharacterName] = useState('');
   const [gender, setGender] = useState('');
   const [species, setSpecies] = useState('');
-  const [hitPoints, setHitPoints] = useState(0);
+  // const [hitPoints, setHitPoints] = useState(0);
   const [tool, setTool] = useState('');
   const [characters, setCharacters] = useState([]);
   const [character, setCharacter] = useState(null);
 
+  // Hooks that provide state
+  const session = useSession();
+
+
+  // Displays list of characters on mount
+  useEffect(() => {
+    getCharacters()
+      .then(res => {
+        setCharacters(res);
+      });   
+  }, []);
+  // console.log(characters);
+
+
+  // Event handlers for character form
   const onCharacterNameChange = ({ target }) => {
     setCharacterName(target.value);
   };
@@ -30,6 +47,7 @@ export default function Characters() {
     setTool(target.value);
   };
 
+  // Event handler to submit new character
   const onCharacterSubmit = (e) => {
     console.log('Form submitted');
     e.preventDefault();
@@ -38,11 +56,11 @@ export default function Characters() {
       characterName,
       species,
       hitPoints: 30,
-      gender
+      gender,
+      userId: session.id
     };
 
-    console.log(character);
-
+    // Fetch call to post new character & update list of displayed characters
     postCharacter(character)
       .then(res => {
         setCharacter(res);
@@ -52,8 +70,6 @@ export default function Characters() {
           });
       });
   };
-
-  console.log(characters);
   console.log(character);
 
 
