@@ -7,7 +7,7 @@ export default function AuthForm({ title, authFn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignupSubmit = (e) => {
+  const handleAuthSubmit = (e) => {
     e.preventDefault();
 
     if(title === 'Signup') return authFn(username, email, password);
@@ -17,7 +17,7 @@ export default function AuthForm({ title, authFn }) {
   return (
     <form
       className={styles.AuthForm}
-      onSubmit={handleSignupSubmit}>
+      onSubmit={handleAuthSubmit}>
       <input
         type="text"
         value={username}
