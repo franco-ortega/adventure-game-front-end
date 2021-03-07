@@ -81,6 +81,5 @@ CharacterForm.propTypes = {
   onGenderChange: PropTypes.func.isRequired,
   onSpeciesChange: PropTypes.func.isRequired,
   onToolChange: PropTypes.func.isRequired,
-  onCharacterSubmit: PropTypes.func.isRequired
-  
-}
+  onCharacterSubmit: PropTypes.func.isRequired 
+};

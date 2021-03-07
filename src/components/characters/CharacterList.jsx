@@ -7,7 +7,7 @@ export default function CharacterList({ characters }) {
 
   const charactersElements = characters.map(character => (
     <li key={character.id}>
-      <CharacterDetails /> {...character}
+      <CharacterDetails {...character} />
     </li>
   ));
 
@@ -20,4 +20,4 @@ export default function CharacterList({ characters }) {
 
 CharacterList.propTypes = {
   characters: PropTypes.array.isRequired
-}
+};
