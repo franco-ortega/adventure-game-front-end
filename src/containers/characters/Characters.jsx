@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CharacterForm from '../../components/characters/CharacterForm';
 import CharacterList from '../../components/characters/CharacterList';
-import { postCharacter } from '../../services/character';
+import { getCharacters, postCharacter } from '../../services/character';
 import styles from './Characters.css';
 
 export default function Characters() {
@@ -11,6 +11,8 @@ export default function Characters() {
   const [species, setSpecies] = useState('');
   const [hitPoints, setHitPoints] = useState(0);
   const [tool, setTool] = useState('');
+  const [characters, setCharacters] = useState([]);
+  const [character, setCharacter] = useState(null);
 
   const onCharacterNameChange = ({ target }) => {
     setCharacterName(target.value);
@@ -41,8 +43,18 @@ export default function Characters() {
 
     console.log(character);
 
-    postCharacter(character);
+    postCharacter(character)
+      .then(res => {
+        setCharacter(res);
+        getCharacters()
+          .then(res => {
+            setCharacters(res);
+          });
+      });
   };
+
+  console.log(characters);
+  console.log(character);
 
 
   return (
